@@ -277,7 +277,8 @@ class MultiSeedTrainer:
                     key, action_key = jax.random.split(key)
                     action_keys = jax.random.split(action_key, num_seeds)
                     action, action_info = vmaped_action(
-                        state.obs.reshape(1, 10) * self.algo_hyperparams.obs_scale,
+                        state.obs.reshape(1, self.env.get_observation_space()[0])
+                        * self.algo_hyperparams.obs_scale,
                         self.models.encoder,
                         self.models.actor,
                         self.models.critic,
