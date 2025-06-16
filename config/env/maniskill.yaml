@@ -1,6 +1,6 @@
 defaults:
   - maniskill_env
 
-name: Reacher-v5
+name: Humanoid-v5
 num_envs: ${train.num_seeds}
 state_shape: 0
